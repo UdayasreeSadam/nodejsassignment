@@ -1,0 +1,121 @@
+1. working on node js buffers
+
+var buf = new Buffer("abcd");
+console.log(buf);
+
+output: 97 98 99 100
+
+var buf = new Buffer(26);
+for(var i=0; i<26;i++)
+{
+buf[i]=i+97;
+}
+console.log(buf.toString('asci');
+
+output:abcdefghijklmnopqrstuvwxyz
+
+var buf = new Buffer(26);
+for(var i=0; i<26;i++)
+{
+buf[i]=i+97;
+}
+console.log(buf.toString('asci',0,5);
+
+output:abcde
+
+var buf = new Buffer(26);
+for(var i=0; i<26;i++)
+{
+buf[i]=i+97;
+}
+console.log(buf.toString('utf8',0,5);
+
+output:abcde
+
+2. converting buffer to json
+
+var buf = new Buffer("abcd");
+console.log(buf.toJSON());
+
+output:{type:'Buffer',data:[97,98,99,100]}
+
+3. List of all the packages in NPM:
+
+NPM: Node Package Manager
+A package in node.js contains all the files you need for a module.
+
+Packages in NPM are:
+Request, Lodash, Async, chalk, Commander, Debug, 
+react-dom, tslib, axios, fs-extra, vue,bluebird, uuid, 
+classnames, core-js, jquery,minimist, @types/node, 
+@babel/runtime,aws-sdk,babel-runtime,semver,
+css-loader,rimraf,babel-core,yeoman-generator,js-yaml,
+ora,@angular/corestyled-components.
+
+4. working on all possible filesystem in node js
+//reading a file in node js
+var fs = require('fs')
+fs.readFile('app.js','utf8',function(err,data){ 
+	console.log(data);
+});
+output:It reads the file app.js
+
+
+//writing data into a file in node js
+fs.writeFile('log.js','console.log("helloworld")',function(err){
+console.log("file created");
+});
+output:
+console.log("helloworld")
+file created
+
+
+//deleting data from a file in node js
+fs.unlink('log.js',function(err){
+console.log("file deleted");
+});
+output:
+it deletes the file log.js
+file deleted
+
+
+//Rename the file "file.txt" into "node.txt":
+fs.rename('file.txt', 'node.txt', function (err){
+	 if (err) throw err; 
+console.log('File Renamed'); 
+}); 
+
+
+//append a file in node js
+fs.appendFile('file.txt', 'content', function (err) {
+	 if (err) throw err; 
+console.log('Saved');
+});
+output :
+it adds data to file.txt
+Saved
+
+
+//create an empty file in node js
+fs.open('udaya.txt', 'w', function (err, file) { 
+if (err) throw err;
+console.log('Saved');
+});
+
+
+//synchronous methods of file system in nodejs 
+var fs=require('fs');
+let data="This is a node js program";
+fs.writeFileSync("file.txt",data);
+console.log("File has been created sucessfully");
+console.log(fs.readFileSync('file.txt','utf8')); 
+
+output:
+it opens the file.txt file and it displays
+This is a node js program
+File has been been created sucessfully
+It reads the file.txt file 
+
+
+
+
